@@ -1,0 +1,30 @@
+
+<div class="container-fluid d-flex justify-content-center">
+  <div class="card bg-primary my-3" style="width: 75%">
+    <div class="card-header">
+      <h1>Reportes</h1>
+    </div>
+    <div class="card-body">
+      <input (keyup)="buscar($event.target.value)" class="form-control" id="buscar" type="text" placeholder="Search..">
+      <br>
+      <table class="table table-bordered table-hover table-sm">
+        <thead>
+          <tr>
+            <th style="width: 12%">Fecha</th>
+            <th>Detalles</th>
+            <th>Sector</th>
+            <th>Usuario</th>
+          </tr>
+        </thead>
+        <tbody id='tabla'>
+          <tr  *ngFor="let reporte of reportes">
+            <td>{{reporte.fecha}}</td>
+            <td>{{reporte.detalles}}</td>
+            <td>{{reporte.sector}}</td>
+            <td>{{reporte.usuario}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
